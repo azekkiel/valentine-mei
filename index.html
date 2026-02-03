@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine</title>
+
+<style>
+body {
+font-family: Arial, Helvetica, sans-serif;
+background: linear-gradient(135deg, #ffd1dc, #e0c3fc);
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 0;
+}
+
+.card {
+background: white;
+padding: 25px;
+border-radius: 20px;
+text-align: center;
+width: 90%;
+max-width: 350px;
+box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+img {
+width: 150px;
+border-radius: 12px;
+}
+
+h1 {
+color: #ff4f8b;
+font-size: 22px;
+margin-top: 15px;
+}
+
+p {
+color: #555;
+font-size: 14px;
+margin-bottom: 20px;
+}
+
+.buttons {
+position: relative;
+height: 120px;
+}
+
+button {
+padding: 12px 22px;
+border: none;
+border-radius: 25px;
+font-size: 15px;
+cursor: pointer;
+position: absolute;
+}
+
+.yes {
+background: #ff4f8b;
+color: white;
+left: 20%;
+bottom: 10px;
+}
+
+.no {
+background: #ddd;
+color: #333;
+right: 20%;
+bottom: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<!-- Anime GIF -->
+<img src="https://media.tenor.com/1l4-9jXvB_IAAAAC/anime-love.gif" alt="anime gif">
+
+<h1>Will you be my Valentine, Mei? 💖</h1>
+<p>please say yes 🥺</p>
+
+<div class="buttons">
+<button class="yes" onclick="yesClick()">Yes 💕</button>
+<button class="no" id="noBtn" onmouseover="moveNo()">No 😳</button>
+</div>
+</div>
+
+<script>
+function moveNo() {
+const btn = document.getElementById("noBtn");
+const x = Math.random() * 200 - 100;
+const y = Math.random() * 80 - 40;
+btn.style.transform = `translate(${x}px, ${y}px)`;
+}
+
+function yesClick() {
+document.body.innerHTML = `
+<div style="text-align:center;">
+<h1 style="color:#ff4f8b;">YAY 💘</h1>
+<p>Mei said YES 🥺💖</p>
+</div>
+`;
+}
+</script>
+
+</body>
+</html>
